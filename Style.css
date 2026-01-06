@@ -1,0 +1,292 @@
+/* Paleta de Colores y Variables */
+:root {
+    --primary-marino: #1a2a6c;    /* Azul Marino Formal */
+    --secondary-celeste: #00a8e8;  /* Celeste Tecnológico */
+    --light-bg: #f0faff;           /* Fondo Celeste muy claro */
+    --dark-text: #0a1128;          /* Texto casi negro para lectura */
+    --white: #ffffff;
+    --gray-static: #f4f7f9;        /* Gris para elementos fijos */
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    color: var(--dark-text);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    background-color: var(--white);
+}
+
+/* Navegación */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10%;
+    background: var(--primary-marino);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--white);
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-celeste);
+}
+
+/* Hero Section */
+/* Hero Section Actualizado con imagen de Construcción/Obra */
+.hero {
+    height: 80vh;
+    /* Degradado de azul marino a celeste sobre la imagen para legibilidad */
+    background: linear-gradient(rgba(26, 42, 108, 0.75), rgba(0, 168, 232, 0.55)), 
+                url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1920') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    background-attachment: fixed; /* Este efecto hace que la imagen se mueva más lento al scrollear (Parallax) */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.hero-content button {
+    background: var(--secondary-celeste);
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.hero-content button:hover {
+    background: #0086ba;
+    transform: scale(1.05);
+}
+
+/* Sección Nosotros */
+.about {
+    padding: 6rem 10%;
+    background: var(--white);
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1.2;
+    min-width: 300px;
+}
+
+.about-text h2 {
+    color: var(--primary-marino);
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+.mision-vision {
+    display: flex;
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.item {
+    background: var(--light-bg);
+    padding: 25px;
+    border-left: 6px solid var(--secondary-celeste);
+    border-radius: 4px;
+    flex: 1;
+}
+
+.item h4 {
+    margin-top: 0;
+    color: var(--primary-marino);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.about-image {
+    flex: 0.8;
+    min-width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    overflow: hidden; /* Corta lo que sobre de la imagen */
+    box-shadow: 0 15px 30px rgba(26, 42, 108, 0.15);
+}
+
+.img-corporativa {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto hace que la imagen llene el espacio sin estirarse feo */
+}
+
+/* Servicios */
+.services {
+    padding: 6rem 10%;
+    background: var(--light-bg);
+    text-align: center;
+}
+
+.services h2 {
+    color: var(--primary-marino);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--secondary-celeste);
+}
+
+.card h3 {
+    color: var(--primary-marino);
+    margin-bottom: 15px;
+}
+
+/* Contacto Mejorado */
+.contact {
+    padding: 6rem 10%;
+    text-align: center;
+    background: var(--white);
+}
+
+.contact h2 {
+    color: var(--primary-marino);
+    margin-bottom: 10px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.contact-card {
+    background: var(--white);
+    border: 1px solid #e1e8ed;
+    padding: 40px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: var(--dark-text);
+    width: 280px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Tarjeta de Correo (Estática) */
+.contact-card.static {
+    cursor: default;
+    background: var(--gray-static);
+    border-color: #d1d9e0;
+}
+
+.contact-card:not(.static):hover {
+    border-color: var(--secondary-celeste);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 168, 232, 0.15);
+}
+
+.contact-card .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.contact-card h3 {
+    margin: 10px 0;
+    color: var(--primary-marino);
+}
+
+.contact-card p {
+    font-weight: bold;
+    color: var(--secondary-celeste);
+    margin: 0;
+}
+
+/* Estilo específico para el texto del email estático */
+.contact-card.static p {
+    color: var(--primary-marino);
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-marino);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 10%;
+    font-size: 0.9rem;
+    border-top: 4px solid var(--secondary-celeste);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.2rem; }
+    nav { padding: 1rem 5%; }
+    .about-container { flex-direction: column; }
+}
